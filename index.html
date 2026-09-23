@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brightspace Quiz Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark">Q</div>
+    <div>
+      <p class="eyebrow">Brightspace course tools</p>
+      <h1>Quiz Converter</h1>
+    </div>
+    <span class="local-badge">Runs locally</span>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow accent">DOCX / TXT → Brightspace package</p>
+      <h2>Turn a quiz document into an importable package.</h2>
+      <p>Upload a quiz, check the questions we found, and download a Brightspace export package. Your file is processed in this browser and is never uploaded.</p>
+    </section>
+
+    <section class="workspace-card">
+      <div class="step-heading"><span>01</span><div><h3>Choose a quiz file</h3><p>Use a structured text file or a Word document.</p></div></div>
+      <label class="drop-zone" id="dropZone" for="fileInput">
+        <input id="fileInput" type="file" accept=".txt,.docx,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <span class="upload-icon">↑</span>
+        <strong id="filePrompt">Drop a .docx or .txt file here</strong>
+        <span>or click to browse</span>
+        <small>Maximum 10 MB</small>
+      </label>
+      <div class="file-row hidden" id="fileRow">
+        <span class="file-type" id="fileType">TXT</span>
+        <div><strong id="fileName"></strong><span id="fileSize"></span></div>
+        <button class="text-button" id="clearFile" type="button">Remove</button>
+      </div>
+      <p class="error-message hidden" id="fileError" role="alert"></p>
+    </section>
+
+    <section class="workspace-card settings-card">
+      <div class="step-heading"><span>02</span><div><h3>Package settings</h3><p>These values appear in the Brightspace quiz.</p></div></div>
+      <div class="settings-grid">
+        <label>Quiz title<input id="quizTitle" type="text" value="Imported Quiz" maxlength="120"></label>
+        <label>Quiz description<textarea id="quizDescription" rows="2" placeholder="Optional description"></textarea></label>
+      </div>
+    </section>
+
+    <section class="workspace-card preview-card hidden" id="previewCard">
+      <div class="preview-heading">
+        <div class="step-heading"><span>03</span><div><h3>Review questions</h3><p id="summaryText">No questions loaded.</p></div></div>
+        <button class="secondary-button" type="button" id="downloadButton">Download package <span>↓</span></button>
+      </div>
+      <div class="warning-box hidden" id="warningBox"></div>
+      <div class="question-list" id="questionList"></div>
+    </section>
+
+    <section class="format-note">
+      <div><span class="info-icon">i</span></div>
+      <div><strong>Recommended text format</strong><p>Number each question, put choices on separate lines as <code>A.</code>, <code>B.</code>, etc., and identify the answer with <code>Answer: B</code>. The converter also recognizes True/False, Fill in the Blank, Matching, Ordering, and Long Answer labels.</p></div>
+    </section>
+  </main>
+  <footer>Brightspace Quiz Converter · all processing happens in your browser</footer>
+  <script src="app.js"></script>
+</body>
+</html>

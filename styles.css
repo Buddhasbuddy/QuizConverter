@@ -1,0 +1,65 @@
+:root {
+  --ink: #172c2c;
+  --muted: #687978;
+  --line: #d9e3df;
+  --paper: #fbfcfa;
+  --mint: #dff1e8;
+  --green: #1b6b58;
+  --deep-green: #123f38;
+  --coral: #ee8b69;
+  --shadow: 0 18px 45px rgba(21, 61, 53, .08);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: #f3f7f4; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body:before { content: ""; display: block; height: 7px; background: var(--coral); }
+.site-header { max-width: 1080px; margin: 0 auto; padding: 27px 32px; display: flex; align-items: center; gap: 13px; }
+.brand-mark { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 11px; background: var(--deep-green); color: white; font: 700 21px Georgia, serif; transform: rotate(-7deg); }
+.site-header h1 { margin: 1px 0 0; font: 700 20px Georgia, serif; letter-spacing: -.2px; }
+.eyebrow { margin: 0; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 800; }
+.local-badge { margin-left: auto; color: var(--green); background: var(--mint); padding: 7px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; }
+.shell { max-width: 900px; margin: 20px auto 75px; padding: 0 32px; }
+.intro { max-width: 680px; margin: 30px 0 35px; }
+.intro h2 { margin: 11px 0 12px; color: var(--deep-green); font: 700 clamp(31px, 5vw, 49px)/1.04 Georgia, serif; letter-spacing: -1.8px; }
+.intro p:not(.eyebrow) { max-width: 580px; color: var(--muted); line-height: 1.65; font-size: 15px; }
+.accent { color: var(--coral); }
+.workspace-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 27px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.step-heading { display: flex; gap: 15px; align-items: flex-start; }
+.step-heading > span { color: var(--coral); font-size: 12px; font-weight: 800; padding-top: 3px; letter-spacing: .08em; }
+.step-heading h3 { margin: 0 0 4px; font: 700 22px Georgia, serif; }
+.step-heading p { margin: 0; color: var(--muted); font-size: 13px; }
+.drop-zone { min-height: 210px; margin-top: 25px; border: 1.5px dashed #9db7ad; border-radius: 13px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; cursor: pointer; background: #fbfdfb; transition: .18s ease; }
+.drop-zone:hover, .drop-zone.dragging { border-color: var(--green); background: #f1faf5; }
+.drop-zone input { display: none; }
+.upload-icon { width: 47px; height: 47px; margin-bottom: 5px; display: grid; place-items: center; border-radius: 50%; background: var(--mint); color: var(--green); font-size: 25px; font-weight: 300; }
+.drop-zone strong { font-size: 15px; }
+.drop-zone span:not(.upload-icon) { color: var(--muted); font-size: 13px; }
+.drop-zone small { margin-top: 12px; color: #9ba9a5; font-size: 11px; }
+.file-row { display: flex; align-items: center; gap: 13px; margin-top: 18px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; }
+.file-row > div { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1; }
+.file-row strong { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-row span:last-child { color: var(--muted); font-size: 11px; }
+.file-type { padding: 8px 7px; color: var(--green); background: var(--mint); border-radius: 6px; font-size: 10px; font-weight: 800; }
+.text-button { border: 0; background: none; color: var(--green); cursor: pointer; font-weight: 700; font-size: 12px; }
+.error-message { color: #a23e2c; background: #fff1ed; border-radius: 8px; padding: 10px 12px; margin: 15px 0 0; font-size: 13px; }
+.settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0 0 30px; }
+label { color: var(--ink); font-size: 12px; font-weight: 700; }
+input[type=text], textarea { display: block; width: 100%; margin-top: 7px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper); font: 14px inherit; resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid #b9ded0; border-color: var(--green); }
+.preview-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.secondary-button { border: 0; border-radius: 8px; padding: 12px 15px; background: var(--deep-green); color: white; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.secondary-button:hover { background: var(--green); }
+.warning-box { margin: 22px 0 0 30px; padding: 11px 13px; color: #795b16; background: #fff7df; border: 1px solid #f0dda5; border-radius: 8px; font-size: 12px; line-height: 1.45; }
+.warning-box ul { margin: 5px 0 0; padding-left: 18px; }
+.question-list { display: grid; gap: 8px; margin: 22px 0 0 30px; }
+.question-item { border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; display: grid; grid-template-columns: 30px 1fr auto; align-items: start; gap: 10px; }
+.question-number { color: var(--coral); font-weight: 800; font-size: 12px; }
+.question-text { font-size: 13px; line-height: 1.45; }
+.question-meta { color: var(--muted); text-align: right; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
+.format-note { display: flex; gap: 12px; padding: 22px 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.format-note p { margin: 5px 0 0; }
+.info-icon { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: white; background: var(--green); font: 700 13px Georgia, serif; }
+code { background: #eaf3ee; color: var(--green); padding: 1px 4px; border-radius: 3px; }
+footer { padding: 22px; border-top: 1px solid var(--line); text-align: center; color: #8a9994; font-size: 11px; }
+.hidden { display: none !important; }
+@media (max-width: 650px) { .site-header, .shell { padding-left: 18px; padding-right: 18px; } .site-header { gap: 9px; } .local-badge { font-size: 10px; padding: 6px 8px; } .settings-grid { grid-template-columns: 1fr; margin-left: 0; } .preview-heading { align-items: flex-start; flex-direction: column; } .secondary-button { margin-left: 30px; } .warning-box, .question-list { margin-left: 0; } .question-item { grid-template-columns: 25px 1fr; } .question-meta { grid-column: 2; text-align: left; } }
