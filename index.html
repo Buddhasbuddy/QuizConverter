@@ -18,7 +18,7 @@
 
   <main class="shell">
     <section class="intro">
-      <p class="eyebrow accent">DOCX / TXT → Brightspace package</p>
+      <p class="eyebrow accent">Respondus format → Brightspace package</p>
       <h2>Turn a quiz document into an importable package.</h2>
       <p>Upload a quiz, check the questions we found, and download a Brightspace export package. Your file is processed in this browser and is never uploaded.</p>
     </section>
@@ -26,7 +26,7 @@
     <section class="workspace-card">
       <div class="step-heading"><span>01</span><div><h3>Choose a quiz file</h3><p>Use a structured text file or a Word document.</p></div></div>
       <label class="drop-zone" id="dropZone" for="fileInput">
-        <input id="fileInput" type="file" accept=".txt,.docx,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <input id="fileInput" type="file" multiple accept=".txt,.docx,.csv,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/csv">
         <span class="upload-icon">↑</span>
         <strong id="filePrompt">Drop a .docx or .txt file here</strong>
         <span>or click to browse</span>
@@ -59,7 +59,7 @@
 
     <section class="format-note">
       <div><span class="info-icon">i</span></div>
-      <div><strong>Recommended text format</strong><p>Number each question, put choices on separate lines as <code>A.</code>, <code>B.</code>, etc., and identify the answer with <code>Answer: B</code>. The converter also recognizes True/False, Fill in the Blank, Matching, Ordering, and Long Answer labels.</p></div>
+      <div><strong>Respondus Standard Format supported</strong><p>Use <code>3. Question text</code> or <code>3) Question text</code>, choices such as <code>a.</code> or <code>*b)</code>, and an optional <code>Answers:</code> list. The converter also recognizes <code>Type: E</code>, <code>Type: F</code>, <code>Type: MT</code>, <code>Type: MR</code>, <code>Title:</code>, <code>Points:</code>, feedback markers, and image tags.</p></div>
     </section>
   </main>
   <footer>Brightspace Quiz Converter · all processing happens in your browser</footer>
